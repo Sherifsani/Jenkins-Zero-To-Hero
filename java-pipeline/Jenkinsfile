@@ -1,0 +1,15 @@
+pipeline{
+  agent any
+  stages{
+    stage('compile'){
+      steps{
+        sh 'cd java-pipeline && javac Main.java'
+      }
+    }
+    stage('run'){
+      steps{
+        sh 'cd java-pipeline && java Main'
+      }
+    }
+  }
+}
